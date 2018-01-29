@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>四众互联2018年年会抽奖程序</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <script src="./js/name.js"></script>
+</head>
+<body ng-app="app" ng-controller="myCtrl">
+<div class="wel-container" ng-show="screenNum==0||screenNum==3">
+    <div class="top-table">
+        <table>
+            <tr>
+                <td>
+                    <img class="img-animate1" src="./assets/photos/小胖.jpg">
+                </td>
+                <td>
+                    <img class="img-animate2" src="./assets/photos/小倩.jpg">
+                </td>
+                <td>
+                    <img class="img-animate3" src="./assets/photos/王亚军.jpg">
+                </td>
+                <td>
+                    <img class="img-animate4" src="./assets/photos/刘艳.jpg">
+                </td>
+                <td>
+                    <img class="img-animate5" src="./assets/photos/欢欢.jpg">
+                </td>
+                <td>
+                    <img class="img-animate6" src="./assets/photos/谬野.jpg">
+                </td>
+                <td rowspan="2" style="text-align: center">
+                    <img class="img-animate7" style="width: 150px;height: 200px" src="./assets/photos/鲍总.jpg">
+                </td>
+                <!--<td>-->
+                    <!--<img src="./assets/photos/小胖.jpg">-->
+                <!--</td>-->
+                <td>
+                    <img class="img-animate8" src="./assets/photos/满仓.jpg">
+                </td>
+                <td>
+                    <img class="img-animate9" src="./assets/photos/琉璃.jpg">
+                </td>
+                <td>
+                    <img class="img-animate10" src="./assets/photos/马菁池.jpg">
+                </td>
+                <td>
+                    <img class="img-animate11" src="./assets/photos/汶岩.jpg">
+                </td>
+                <td>
+                    <img class="img-animate12" src="./assets/photos/秦律师.jpg">
+                </td>
+                <td>
+                    <img class="img-animate3" src="./assets/photos/左婷.jpg">
+                </td>
+                <td>
+                    <img class="img-animate1" src="./assets/photos/主任.jpg">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img class="img-animate7" src="./assets/photos/李世芳.jpg">
+                </td>
+                <td>
+                    <img class="img-animate1" src="./assets/photos/李丽.jpg">
+                </td>
+                <td>
+                    <img class="img-animate12" src="./assets/photos/李晓川.jpg">
+                </td>
+                <td>
+                    <img class="img-animate11" src="./assets/photos/张硕.jpg">
+                </td>
+                <td>
+                    <img class="img-animate7" src="./assets/photos/张慧.jpg">
+                </td>
+                <td>
+                    <img class="img-animate8" src="./assets/photos/一辉.jpg">
+                </td>
+                <td>
+                    <img class="img-animate9" src="./assets/photos/梁志国.jpg">
+                </td>
+                <td>
+                    <img class="img-animate6" src="./assets/photos/祁伟.jpg">
+                </td>
+                <td>
+                    <img class="img-animate5" src="./assets/photos/宝云.jpg">
+                </td>
+                <td>
+                    <img class="img-animate2" src="./assets/photos/阿呆.jpg">
+                </td>
+                <td>
+                    <img class="img-animate3" src="./assets/photos/张海.jpg">
+                </td>
+
+                <td>
+                    <img class="img-animate1" src="./assets/photos/张萌.jpg">
+                </td>
+                <td>
+                    <img class="img-animate1" src="./assets/photos/赵垒.jpg">
+                </td>
+            </tr>
+        </table>
+    </div>
+<div class="bottom-table">
+  <table>
+      <tr>
+          <td>
+              <img class="img-animate4" src="./assets/photos/孙鹏.jpg">
+          </td>
+          <td>
+              <img class="img-animate13" src="./assets/photos/刘欢.jpg">
+          </td>
+          <td>
+              <img class="img-animate14" src="./assets/photos/魏丽惠.jpg">
+          </td>
+          <td>
+              <img class="img-animate15" src="./assets/photos/阿甘.jpg">
+          </td>
+          <td>
+              <img class="img-animate16" src="./assets/photos/阿亮.jpg">
+          </td>
+          <td>
+              <img class="img-animate7" src="./assets/photos/陈江峰.jpg">
+          </td>
+          <td>
+              <img class="img-animate18" src="./assets/photos/大车.jpg">
+          </td>
+          <td>
+              <img class="img-animate19" src="./assets/photos/杜超.jpg">
+          </td>
+          <td>
+              <img class="img-animate20" src="./assets/photos/蒋琦.jpg">
+          </td>
+          <td>
+              <img class="img-animate1" src="./assets/photos/孔文.jpg">
+          </td>
+          <td>
+              <img class="img-animate11" src="./assets/photos/李慧.jpg">
+          </td>
+          <td>
+              <img class="img-animate13" src="./assets/photos/李沫.jpg">
+          </td>
+          <td>
+              <img class="img-animate14" src="./assets/photos/李思成.jpg">
+          </td>
+          <td>
+              <img class="img-animate15" src="./assets/photos/刘欢.jpg">
+          </td>
+      </tr>
+      <tr>
+          <td>
+              <img class="img-animate1" src="./assets/photos/木子.jpg">
+          </td>
+          <td>
+              <img class="img-animate6" src="./assets/photos/暮春明.jpg">
+          </td>
+          <td>
+              <img class="img-animate7" src="./assets/photos/佩恩.jpg">
+          </td>
+          <td>
+              <img class="img-animate8" src="./assets/photos/宋培庄.jpg">
+          </td>
+          <td>
+              <img class="img-animate10" src="./assets/photos/王炳元.jpg">
+          </td>
+          <td>
+              <img class="img-animate11" src="./assets/photos/王松.jpg">
+          </td>
+          <td>
+              <img class="img-animate12" src="./assets/photos/王文祥.jpg">
+          </td>
+          <td>
+              <img class="img-animate7" src="./assets/photos/王晓飞.jpg">
+          </td>
+          <td>
+              <img class="img-animate20" src="./assets/photos/王心焕.jpg">
+          </td>
+          <td>
+              <img class="img-animate1" src="./assets/photos/王徐兵.jpg">
+          </td>
+          <td>
+              <img class="img-animate11" src="./assets/photos/徐竹.jpg">
+          </td>
+          <td>
+              <img class="img-animate3" src="./assets/photos/伊伊.jpg">
+          </td>
+          <td>
+              <img class="img-animate2" src="./assets/photos/余胜利.jpg">
+          </td>
+          <td>
+              <img class="img-animate7" src="./assets/photos/张宝军.jpg">
+          </td>
+      </tr>
+  </table>
+</div>
+</div>
+<!--祈福树界面-->
+<div class="container" ng-show="screenNum==1">
+    <img id="bcard1" style="left: 280px;top: 20px;" ng-class="{'bless-page':blessCardFlash==1}" src="./assets/imgs/bless-card1.png">
+
+    <img id="bcard2" style="left: 80px;top: 110px;" ng-class="{'bless-page':blessCardFlash==2}" src="./assets/imgs/bless-card1.png">
+    <img id="bcard3" style="left: 180px;top: 101px;" ng-class="{'bless-page':blessCardFlash==3}" src="./assets/imgs/bless-card1.png">
+    <img id="bcard4" style="left: 270px;top: 145px;" ng-class="{'bless-page':blessCardFlash==4}" src="./assets/imgs/bless-card1.png">
+    <img id="bcard5" style="left: 380px;top: 117px;" ng-class="{'bless-page':blessCardFlash==5}" src="./assets/imgs/bless-card1.png">
+    <img id="bcard6" style="left: 480px;top: 104px;" ng-class="{'bless-page':blessCardFlash==6}" src="./assets/imgs/bless-card1.png">
+
+    <img id="bcard7" style="left: 50px;top: 210px;" ng-class="{'bless-page':blessCardFlash==7}" src="./assets/imgs/bless-card1.png">
+    <img id="bcard8" style="left: 150px;top: 190px;" ng-class="{'bless-page':blessCardFlash==8}" src="./assets/imgs/bless-card1.png">
+    <img id="bcard9" style="left: 250px;top: 237px;" ng-class="{'bless-page':blessCardFlash==9}" src="./assets/imgs/bless-card1.png">
+    <img id="bcard10" style="left: 350px;top: 210px;" ng-class="{'bless-page':blessCardFlash==10}" src="./assets/imgs/bless-card1.png">
+    <img id="bcard11" style="left: 450px;top: 230px;" ng-class="{'bless-page':blessCardFlash==11}" src="./assets/imgs/bless-card1.png">
+    <img id="bcard12" style="left: 550px;top: 210px;" ng-class="{'bless-page':blessCardFlash==12}" src="./assets/imgs/bless-card1.png">
+
+    <img id="bcard13" style="left: 40px;top: 334px;" ng-class="{'bless-page':blessCardFlash==13}" src="./assets/imgs/bless-card1.png">
+    <img id="bcard14" style="left: 140px;top: 310px;" ng-class="{'bless-page':blessCardFlash==14}" src="./assets/imgs/bless-card1.png">
+    <img id="bcard15" style="left: 220px;top: 340px;" ng-class="{'bless-page':blessCardFlash==15}" src="./assets/imgs/bless-card1.png">
+    <img id="bcard16" style="left: 340px;top: 310px;" ng-class="{'bless-page':blessCardFlash==16}" src="./assets/imgs/bless-card1.png">
+    <img id="bcard17" style="left: 440px;top: 310px;" ng-class="{'bless-page':blessCardFlash==17}" src="./assets/imgs/bless-card1.png">
+    <img id="bcard18" style="left: 569px;top: 320px;" ng-class="{'bless-page':blessCardFlash==18}" src="./assets/imgs/bless-card1.png">
+
+    <img id="bcard19" style="left: 410px;top: 434px;" ng-class="{'bless-page':blessCardFlash==19}" src="./assets/imgs/bless-card1.png">
+    <img id="bcard20" style="left: 140px;top: 434px;" ng-class="{'bless-page':blessCardFlash==20}" src="./assets/imgs/bless-card1.png">
+    <img id="bcard21" style="left: 240px;top: 434px;" ng-class="{'bless-page':blessCardFlash==21}" src="./assets/imgs/bless-card1.png">
+    <img id="bcard22" style="left: 483px;top: 464px;" ng-class="{'bless-page':blessCardFlash==22}" src="./assets/imgs/bless-card1.png">
+    <img id="bcard23" style="left: 540px;top: 424px;" ng-class="{'bless-page':blessCardFlash==23}" src="./assets/imgs/bless-card1.png">
+</div>
+<!--抽奖界面-->
+<div class="lottery-container" ng-show="screenNum==2">
+    <div class="lottery-left" id="lotteryLeft">
+        <img id="lottery1" style="left: 298px;top: 190px;" ng-class="{'flash-card':flashNum==1}" src="./assets/imgs/bless-card1.png">
+
+        <img id="lottery2" style="left: 180px;top: 260px;" ng-class="{'flash-card':flashNum==2}" src="./assets/imgs/bless-card1.png">
+        <img id="lottery3" style="left: 230px;top: 221px;" ng-class="{'flash-card':flashNum==3}" src="./assets/imgs/bless-card1.png">
+        <img id="lottery4" style="left: 270px;top: 245px;" ng-class="{'flash-card':flashNum==4}" src="./assets/imgs/bless-card1.png">
+        <img id="lottery5" style="left: 380px;top: 217px;" ng-class="{'flash-card':flashNum==5}" src="./assets/imgs/bless-card1.png">
+        <img id="lottery6" style="left: 440px;top: 249px;" ng-class="{'flash-card':flashNum==6}" src="./assets/imgs/bless-card1.png">
+
+        <img id="lottery7" style="left: 150px;top: 310px;" ng-class="{'flash-card':flashNum==7}" src="./assets/imgs/bless-card1.png">
+        <img id="lottery8" style="left: 198px;top: 371px;" ng-class="{'flash-card':flashNum==8}" src="./assets/imgs/bless-card1.png">
+        <img id="lottery9" style="left: 250px;top: 337px;" ng-class="{'flash-card':flashNum==9}" src="./assets/imgs/bless-card1.png">
+        <img id="lottery10" style="left: 350px;top: 310px;" ng-class="{'flash-card':flashNum==10}" src="./assets/imgs/bless-card1.png">
+        <img id="lottery11" style="left: 450px;top: 330px;" ng-class="{'flash-card':flashNum==11}" src="./assets/imgs/bless-card1.png">
+        <img id="lottery12" style="left: 532px;top: 322px;" ng-class="{'flash-card':flashNum==12}" src="./assets/imgs/bless-card1.png">
+
+        <img id="lottery13" style="left: 209px;top: 468px;" ng-class="{'flash-card':flashNum==13}" src="./assets/imgs/bless-card1.png">
+        <img id="lottery14" style="left: 140px;top: 410px;" ng-class="{'flash-card':flashNum==14}" src="./assets/imgs/bless-card1.png">
+        <img id="lottery15" style="left: 273px;top: 440px;" ng-class="{'flash-card':flashNum==15}" src="./assets/imgs/bless-card1.png">
+        <img id="lottery16" style="left: 340px;top: 410px;" ng-class="{'flash-card':flashNum==16}" src="./assets/imgs/bless-card1.png">
+        <img id="lottery17" style="left: 440px;top: 410px;" ng-class="{'flash-card':flashNum==17}" src="./assets/imgs/bless-card1.png">
+        <img id="lottery18" style="left: 514px;top: 420px;" ng-class="{'flash-card':flashNum==18}" src="./assets/imgs/bless-card1.png">
+
+        <img id="lottery19" style="left: 410px;top: 534px;" ng-class="{'flash-card':flashNum==19}" src="./assets/imgs/bless-card1.png">
+        <img id="lottery20" style="left: 140px;top: 514px;" ng-class="{'flash-card':flashNum==20}" src="./assets/imgs/bless-card1.png">
+        <img id="lottery21" style="left: 240px;top: 534px;" ng-class="{'flash-card':flashNum==21}" src="./assets/imgs/bless-card1.png">
+        <img id="lottery22" style="left: 483px;top: 504px;" ng-class="{'flash-card':flashNum==22}" src="./assets/imgs/bless-card1.png">
+        <img id="lottery23" style="left: 540px;top: 514px;" ng-class="{'flash-card':flashNum==23}" src="./assets/imgs/bless-card1.png">
+    </div>
+    <div class="lottery-right">
+        <div class="lottery-title">
+            {{prizeLevel}}
+        </div>
+        <div id="pointMumberBless">
+
+        </div>
+    </div>
+</div>
+<audio src="{{music}}" autoplay></audio>
+<script src="./lib/jquery.min.js"></script>
+<script src="./lib/angular.min.js"></script>
+<script src="./lib/jquery.easing.min.js"></script>
+<script src="./js/index.js"></script>
+</body>
+</html>

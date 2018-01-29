@@ -1,0 +1,200 @@
+body {
+    background-image: url(../assets/imgs/index-bg.jpg);
+    background-size:100vw 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin:0px;
+    padding: 0;
+    overflow: hidden;
+}
+.container{
+    width: 680px;
+    height: 70vh;
+    margin: 150px auto;
+    /*background-color: rgba(155,155,155,0.2);*/
+    position: relative;
+}
+.container img{
+    vertical-align: top;
+    position: absolute;
+    display: none;
+}
+.bless-card-active{
+    -webkit-box-shadow: 0 0 40px yellow;
+}
+
+@-webkit-keyframes greenPulse {
+    from { -webkit-box-shadow: 0 0 100px yellow; }
+    50% { -webkit-box-shadow: 0 0 17px red; }
+    to { -webkit-box-shadow: 0 0 100px yellow; }
+}
+.bless-page{
+    -webkit-animation-name:greenPulse;
+    -webkit-animation-duration: 2500ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-box-shadow: 0 0 100px yellow;
+}
+
+/*展示抽奖闪烁*/
+.flash-card{
+    -webkit-box-shadow: 0 0 40px yellow;
+}
+/*抽奖界面容器*/
+.lottery-container{
+    width: 1280px;
+    margin:  0 auto;
+    height: 100vh;
+}
+.lottery-left{
+    width: 56%;
+    height: 100vh;
+    /*background-color: rgba(123,123,123,0.2);*/
+    float: left;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: url("../assets/imgs/tree.png") no-repeat left 70px;
+    position: relative;
+    box-sizing: border-box;
+}
+.lottery-left img{
+    position: absolute;
+    width: 35px;
+    height: 62px;
+}
+.prize-img{
+    top: 200px;
+    left: 145px;;
+    width: 429px !important;
+    height: 420px !important;
+    display: none;
+}
+.lottery-right{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 44%;
+    height: 100vh;
+    float: right;
+    /*background: rgba(133,133,133,0.3);*/
+    box-sizing: border-box;
+}
+.lottery-title{
+    height: 100px;
+    width: 100%;
+    color: #c5291d;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 45px;
+    box-sizing: border-box;
+}
+.content{
+    position: relative;
+    margin-left: 150px;
+    width: 400px;
+    height: 90px;
+}
+.content img{
+    position: absolute;
+    left: -80px;
+    top: 7px;
+    width: 70px;
+    height: 70px;
+}
+.l-pic-index{
+    /*display:none;*/
+    position: absolute;
+    left: 150px;
+    top: -3px;
+    z-index:2;
+    width:50px;
+    height:87px;
+    background: url("../assets/imgs/rell-l.png") no-repeat right 0;
+    background-size: 30px 87px;
+}
+.r-pic-index{
+    /*display:none;*/
+    position: absolute;
+    right: 150px;
+    top: -3px;
+    z-index: 2;
+    width:50px;
+    height:87px;
+    background: url("../assets/imgs/rell-r.png") no-repeat left 0;
+    background-size: 30px 87px;
+}
+.l-bg-index{
+    position: absolute;
+    top: 7px;
+    left: 175px;
+    z-index: 1;
+    width: 25px;
+    height: 67px;
+    background: url("../assets/imgs/rell-bg-left.png") right 0 no-repeat;
+    background-size: 233px 67px;
+}
+.r-bg-index{
+    position: absolute;
+    top:7px;
+    right: 175px;
+    z-index: 1;
+    width: 25px;
+    height: 67px;
+    background: url("../assets/imgs/rell-bg-right.png") 0 0 no-repeat;
+    background-size: 233px 67px;
+}
+.main-index{
+    display: none;
+    overflow: hidden;
+    zoom:1;
+    position: absolute;
+    z-index: 5;
+    width:400px;
+    line-height: 79px;
+    text-align: center;
+    font-size: 19px;
+    color: white;
+}
+
+.bottom-table{
+    width: 1280px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 18px;
+}
+
+.bottom-table table{
+    width: 100%;
+}
+
+.bottom-table table img{
+    width: 73px;
+    height: 96px;
+}
+
+.top-table{
+    width: 1280px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    top: 18px;
+}
+.top-table table{
+    width: 100%;
+}
+.top-table table img{
+    width: 73px;
+    height: 96px;
+}
+table tr td{
+    text-align: center;
+}
