@@ -67,6 +67,7 @@ body {
     width: 429px !important;
     height: 420px !important;
     display: none;
+    box-shadow: 0 0 140px white;
 }
 .lottery-right{
     padding-top: 40px;
