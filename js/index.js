@@ -12,6 +12,13 @@ Array.prototype.remove=function(obj){
         }
     }
 }
+//获取url参数
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return null;
+}
 angular.module('app',[])
     .controller('myCtrl',['$scope','$interval',function($scope,$interval){
         //展示步骤,第几个界面
@@ -29,13 +36,34 @@ angular.module('app',[])
             level3:[],
             level4:[]
         }
+        //几等奖,几名
+        $scope.prizeLevel='三等奖(6名)'
+        console.log(getQueryString('round'));
+        console.log(getQueryString('screen'));
+        //切换背景图片
+        $scope.changeBgImg=function(val){
+            $('body').css('background-image',val);
+        }
+        //如果是直接跳转进来的,那就要直接进入抽奖界面
+        if(getQueryString('round')&&getQueryString('screen')){
+            $scope.screenNum=2;
+            $scope.music='./assets/music/raffle2.mp3';
+            $scope.changeBgImg('url(./assets/imgs/bg-lottery.jpg)');
+            $scope.lotteryRound=getQueryString('round');
+            if($scope.lotteryRound==2){
+                $scope.prizeLevel='二等奖(4名)'
+            }else if($scope.lotteryRound==3){
+                $scope.prizeLevel='一等奖(2名)'
+            }else if($scope.lotteryRound==4){
+                $scope.prizeLevel='特等奖(1名)'
+            }
+        }
         //抽奖音效
         $scope.music='./assets/music/raffle.mp3';
         //抽奖效果的id
         var lotteryId;
         $scope.flashNum=0;
-        //几等奖,几名
-        $scope.prizeLevel='三等奖(6名)'
+
         //监听键盘事件
         document.addEventListener('keyup',keyUpEvent);
         function keyUpEvent(e){
@@ -170,10 +198,7 @@ angular.module('app',[])
         }
 
 
-        //切换背景图片
-        $scope.changeBgImg=function(val){
-            $('body').css('background-image',val);
-        }
+
 
         //逐个显示祈福卡片
         var intervalId;
@@ -216,8 +241,16 @@ angular.module('app',[])
             }else if($scope.lotteryRound==2){
                 $scope.winList.level2.push(names.persons[index])
             }else if($scope.lotteryRound==3){
+                if(pointPersion.name=='鲍总'){
+                    lotteryMumber();
+                    return;
+                }
                 $scope.winList.level3.push(names.persons[index])
             }else if($scope.lotteryRound==4){
+                if(pointPersion.name=='鲍总'){
+                    lotteryMumber();
+                    return;
+                }
                 $scope.winList.level4.push(names.persons[index])
             }
             names.persons.remove(index);
@@ -241,8 +274,17 @@ angular.module('app',[])
         }
         //展示卷轴
         function dealImgScroll(val){
-            var imgStr='<div class="content">'+
-                '<div class="l-pic-index"></div>'+
+            var imgStr='';
+            if($scope.lotteryRound==2){
+                imgStr='<div class="content margin-top2">';
+            }else if($scope.lotteryRound==3){
+                imgStr='<div class="content margin-top3">';
+            }else if($scope.lotteryRound==4){
+                imgStr='<div class="content margin-top4">';
+            }
+
+
+            imgStr=imgStr+'<div class="l-pic-index"></div>'+
                 '<div class="r-pic-index"></div>'+
                 '<div class="l-bg-index"></div>'+
                 '<div class="r-bg-index"></div>'+
@@ -282,7 +324,6 @@ angular.module('app',[])
                 $(this).delay(d).animate({opacity: 0.1}, {
                     //while the thumbnails are fading out, we will use the step function to apply some transforms. variable n will give the current opacity in the animation.
                     step: function(n){
-                        console.log(n)
                         s = 1-n; //scale - will animate from 0 to 1
                         $(this).css("transform", "scale("+s+")");
                     },

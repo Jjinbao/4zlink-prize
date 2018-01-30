@@ -86,6 +86,15 @@ body {
     padding-top: 45px;
     box-sizing: border-box;
 }
+.margin-top2{
+    margin-top: 30px;
+}
+.margin-top3{
+    margin-top: 90px;
+}
+.margin-top4{
+    margin-top:130px;
+}
 .content{
     position: relative;
     margin-left: 150px;
