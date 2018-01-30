@@ -275,7 +275,9 @@ angular.module('app',[])
         //展示卷轴
         function dealImgScroll(val){
             var imgStr='';
-            if($scope.lotteryRound==2){
+            if($scope.lotteryRound==1){
+                imgStr='<div class="content">';
+            }else if($scope.lotteryRound==2){
                 imgStr='<div class="content margin-top2">';
             }else if($scope.lotteryRound==3){
                 imgStr='<div class="content margin-top3">';
