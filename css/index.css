@@ -1,5 +1,5 @@
 body {
-    background-image: url(../assets/imgs/index-bg.jpg);
+    background-image: url(../assets/imgs/wel.jpg);
     background-size:100vw 100vh;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -37,7 +37,7 @@ body {
 
 /*展示抽奖闪烁*/
 .flash-card{
-    -webkit-box-shadow: 0 0 40px yellow;
+    -webkit-box-shadow: 0 0 40px #ffb03e;
 }
 /*抽奖界面容器*/
 .lottery-container{
@@ -160,7 +160,7 @@ body {
     width:400px;
     line-height: 79px;
     text-align: center;
-    font-size: 19px;
+    font-size: 18px;
     color: white;
 }
 

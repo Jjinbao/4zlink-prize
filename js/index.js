@@ -22,7 +22,12 @@ function getQueryString(name) {
 angular.module('app',[])
     .controller('myCtrl',['$scope','$interval',function($scope,$interval){
         //展示步骤,第几个界面
-        $scope.screenNum=-1;
+        if(!localStorage.getItem('nameLists')){
+            localStorage.setItem('nameLists',JSON.stringify(names))
+        }
+
+
+        $scope.screenNum=0;
         //抽奖轮数,第多少轮
         $scope.lotteryRound=1;
         //标记是否正在抽奖
@@ -36,6 +41,10 @@ angular.module('app',[])
             level3:[],
             level4:[]
         }
+        if(!localStorage.getItem('winList')){
+            localStorage.setItem('winList',JSON.stringify($scope.winList));
+        }
+
         //几等奖,几名
         $scope.prizeLevel='三等奖(6名)'
         console.log(getQueryString('round'));
@@ -61,6 +70,9 @@ angular.module('app',[])
             }else if($scope.lotteryRound==4){
                 $scope.prizeLevel='特等奖(1名)'
             }
+        }else{
+            inMovieStatus();
+            randomPicAcitve();
         }
 
         //抽奖效果的id
@@ -237,6 +249,8 @@ angular.module('app',[])
         }
         //抽出中奖同事--处理抽奖结果的函数
         function lotteryMumber(){
+            var names = JSON.parse(localStorage.getItem('nameLists'))
+            $scope.winList=JSON.parse(localStorage.getItem('winList'))
             $('audio')[0].pause();
             var index = Math.floor((Math.random()*names.persons.length));
             var pointPersion=names.persons[index];
@@ -257,9 +271,10 @@ angular.module('app',[])
                 }
                 $scope.winList.level4.push(names.persons[index])
             }
-
+            localStorage.setItem('winList',JSON.stringify($scope.winList));
             changeMusic();
             names.persons.remove(index);
+            localStorage.setItem('nameLists',JSON.stringify(names))
             dealImgScroll(pointPersion);
         }
         function changeMusic(){
