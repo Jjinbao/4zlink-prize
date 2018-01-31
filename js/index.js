@@ -44,6 +44,10 @@ angular.module('app',[])
         $scope.changeBgImg=function(val){
             $('body').css('background-image',val);
         }
+
+        //抽奖音效
+        $scope.music='./assets/music/raffle.mp3';
+        $('#player')[0].pause();
         //如果是直接跳转进来的,那就要直接进入抽奖界面
         if(getQueryString('round')&&getQueryString('screen')){
             $scope.screenNum=2;
@@ -58,8 +62,7 @@ angular.module('app',[])
                 $scope.prizeLevel='特等奖(1名)'
             }
         }
-        //抽奖音效
-        $scope.music='./assets/music/raffle.mp3';
+
         //抽奖效果的id
         var lotteryId;
         $scope.flashNum=0;
@@ -234,6 +237,7 @@ angular.module('app',[])
         }
         //抽出中奖同事--处理抽奖结果的函数
         function lotteryMumber(){
+            $('audio')[0].pause();
             var index = Math.floor((Math.random()*names.persons.length));
             var pointPersion=names.persons[index];
             if($scope.lotteryRound==1){
@@ -253,8 +257,17 @@ angular.module('app',[])
                 }
                 $scope.winList.level4.push(names.persons[index])
             }
+
+            changeMusic();
             names.persons.remove(index);
             dealImgScroll(pointPersion);
+        }
+        function changeMusic(){
+            $scope.music='./assets/music/4899.mp3';
+            $('audio')[0].play();
+            setTimeout(function(){
+                $scope.music='./assets/music/raffle2.mp3'
+            },3100);
         }
         //展示奖品图片
         function showPrizeImg() {
@@ -284,14 +297,11 @@ angular.module('app',[])
             }else if($scope.lotteryRound==4){
                 imgStr='<div class="content margin-top4">';
             }
-
-
             imgStr=imgStr+'<div class="l-pic-index"></div>'+
                 '<div class="r-pic-index"></div>'+
                 '<div class="l-bg-index"></div>'+
                 '<div class="r-bg-index"></div>'+
-                '<div class="main-index">'+
-                '千门万户曈曈日,总把新桃换旧符'+
+                '<div class="main-index">'+val.bless+
                 '</div>'+
                     '<img src="./assets/photos/'+val.pic+'">'+
                 '</div>'
