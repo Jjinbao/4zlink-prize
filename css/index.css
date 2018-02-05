@@ -36,8 +36,13 @@ body {
 }
 
 /*展示抽奖闪烁*/
+.flash-card-out{
+    -webkit-box-shadow: -15px 0px 15px yellow inset,0px -15px 15px yellow inset,15px 0px 15px yellow inset,0px 15px 15px yellow inset;
+    box-shadow: -15px 0px 15px yellow inset,0px -15px 15px yellow inset,15px 0px 15px yellow inset,0px 15px 15px yellow inset;
+
+}
 .flash-card{
-    -webkit-box-shadow: 0 0 40px #ffb03e;
+    -webkit-box-shadow: -15px 0px 15px yellow,0px -15px 15px yellow,15px 0px 15px yellow,0px 15px 15px yellow;
 }
 /*抽奖界面容器*/
 .lottery-container{
